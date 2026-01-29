@@ -28,8 +28,8 @@ jobs:
         id: build-image
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          IMAGE_TAG: latest-rkb
-          REPOSITORY: tradebox-backend  # separate ECR repo for RKB
+          IMAGE_TAG: testing-staticip
+          REPOSITORY: testing  # separate ECR repo for RKB
         run: |
           cd server
           docker build -t $ECR_REGISTRY/$REPOSITORY:$IMAGE_TAG .
